@@ -6,7 +6,7 @@ WORKDIR /app
 # Install dependencies (this step is cached as long as the dependencies don't change)
 COPY package.json pnpm-lock.yaml ./
 
-RUN corepack enable pnpm && pnpm install
+RUN corepack prepare pnpm@8.15.9+sha1.aa4bc353b5f59fe1f1df5d802ce049ddf7f3c60e
 
 # Copy the rest of your app's source code
 COPY . .
